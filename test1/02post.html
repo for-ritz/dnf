@@ -23,6 +23,7 @@
                 if (a.readyState==4 && a.status==200)
                 {
                     document.getElementById("div1").innerHTML=a.responseText;
+                    src:"https://www.baidu.com"
                 }
             }
             a.open("POST",url,true);
