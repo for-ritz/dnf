@@ -14,17 +14,17 @@
     function geton() {
 
 
-        var xmlhttp;
+        var a;
         if (window.XMLHttpRequest) {
-            //  IE7+, Firefox, Chrome, Opera, Safari 浏览器执行代码
-            xmlhttp = new XMLHttpRequest();
+
+            a = new XMLHttpRequest();
         }
         else {
-            // IE6, IE5 浏览器执行代码
-            xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
+
+            a = new ActiveXObject("Microsoft.XMLHTTP");
         }
-        xmlhttp.open("GET", "ajax_info.txt", true);
-        xmlhttp.send();
+        a.open("GET", "ajax_info.txt", true);
+        a.send();
     }
 </script>
 </html>

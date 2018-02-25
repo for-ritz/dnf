@@ -3,38 +3,53 @@
 <head>
     <meta charset="utf-8">
     <script>
-
-        var url="https://www.baidu.com/";
+        var url="http://192.168.3.158:8088/infor";
         function okc()
         {
+
             var a;
+
             if (window.XMLHttpRequest)
             {
 
                 a=new XMLHttpRequest();
+
             }
             else
             {
 
-                a=new ActiveXObject("Microsoft.XMLHTTP");
+                a=new ActiveXObject("Microsoft.a");
             }
+
             a.reader=function()
             {
                 if (a.readyState==4 && a.status==200)
                 {
-                    document.getElementById("div1").innerHTML=a.responseText;
+
+                    var time =a.responseText;
+                    console.log(time)
+                    var js =JSON.parse(a.responseText);
+
+                    console.log(js)
+
+                    document.getElementById("title").innerHTML=js.title;
+                    document.getElementById("img").src=js.subjects[0].images.small;
                 }
             }
-            a.open("POST",url,true);
+            a.open("GET",url,true);
             a.send();
         }
     </script>
 </head>
 <body>
 
-<h2>AJAX</h2>
+<h2>OKC</h2>
 <button type="button" onclick="okc()">请求数据</button>
-<div id="div1"></div>
+
+<H1 id="title"></H1>
+
+<img id="img">
+
 
 </body>
 </html>
