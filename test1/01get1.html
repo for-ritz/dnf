@@ -17,7 +17,7 @@
             else
             {
 
-                a=new ActiveXObject("Microsoft.a");
+                a=new ActiveXObject("Microsoft.XMLHTTP");
             }
 
             a.reader=function()
@@ -27,7 +27,7 @@
 
                     var time =a.responseText;
 
-                    var js =JSON.parse(time);
+                    var js =JSON.parse(time.responseText);
 
                     console.log(js)
 
@@ -47,7 +47,7 @@
 
 <H1 id="title"></H1>
 
-<img id="img">
+<img id="img" >
 
 
 </body>
