@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <script>
+        var url="http://192.168.3.158:8088/infor";
+        function okc()
+        {
+
+            var a;
+
+            if (window.XMLHttpRequest)
+            {
+
+                a=new XMLHttpRequest();
+            }
+            else
+            {
+
+                a=new ActiveXObject("Microsoft.XMLHTTP");
+            }
+
+            a.reader=function()
+            {
+                if (a.readyState==4 && a.status==200)
+                {
+
+                    var time =a.responseText;
+
+                    var js =JSON.parse(time);
+
+                    console.log(js)
+
+                    document.getElementById("title").innerHTML=js.title;
+                    document.getElementById("img").src=js.subjects[0].images.small;
+                }
+            }
+            a.open("GET",url,true);
+            a.send();
+        }
+    </script>
+</head>
+<body>
+
+<h2>OKC</h2>
+<button type="button" onclick="okc()">请求数据</button>
+
+<H1 id="title"></H1>
+
+<img id="img">
+
+
+</body>
+</html>
