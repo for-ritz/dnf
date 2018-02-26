@@ -21,14 +21,15 @@ function okc(opt) {
     }
     else {
         a = new ActiveXObject('Microsoft.XMLHTTP');
-    }var params = [];
+    }
+    var params = [];
     for (var key in opt.time){
         params.push(key + '=' + opt.time[key]);
     }
     var postData = params.join('&');
     if (opt.method.toUpperCase() === 'POST') {
         a.open(opt.method, opt.url, opt.async);
-        a.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded;charset=utf-8');
+        a.setRequestHeader('Content-Type','application/x-www-form-urlencoded;charset=utf-8');
         a.send(postData);
     }
     else if (opt.method.toUpperCase() === 'GET') {
