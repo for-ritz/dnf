@@ -2,9 +2,27 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title></title>
+    <script src="https://cdn.bootcss.com/angular.js/1.6.3/angular.min.js"></script>
+    <script src="ajax.js"></script>
+    <script>
+        okc({
+            method: 'POST',
+            url: 'https://www.baidu.com/',
+            time: {
+                name1: 'value1',
+                name2: 'value2'
+            },
+            success: function (response) {
+                console.log(response);
+            }
+        });
+    </script>
+
 </head>
 <body>
+
+
 
 </body>
 </html>
